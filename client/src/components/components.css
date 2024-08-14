@@ -32,3 +32,16 @@
   height: 50vh;
   color: red;
 }
+.inputBox {
+  font-size: 18px;
+  width: 400px;
+}
+.textarea-container .help-text {
+  display: block;
+  margin-top: 5px;
+  color: #666;
+  font-size: 0.875rem;
+}
+.find-button {
+  margin-top: 20px;
+}
