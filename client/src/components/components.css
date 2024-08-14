@@ -6,3 +6,29 @@
 .user-data-menu {
   padding-right: 10px;
 }
+.navbar-brand {
+  padding-left: 10px;
+  display: flex;
+}
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.title {
+  margin-top: 5px;
+  color: #167bff;
+}
+.logout {
+  color: #167bff;
+}
+.navbar {
+  margin-bottom: 20px;
+}
+.promptInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  color: red;
+}

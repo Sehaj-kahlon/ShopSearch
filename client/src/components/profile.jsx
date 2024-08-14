@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { auth, db } from "./firebase";
 import { doc, getDoc } from "firebase/firestore";
+import PromptInput from "./promptInput";
 import "./components.css";
 function Profile() {
   const [userDetails, setUserDetails] = useState(null);
@@ -36,40 +37,54 @@ function Profile() {
     setShowMenu(!showMenu);
   };
   return (
-    <nav className="navbar navbar-light bg-light">
-      {userDetails ? (
-        <div className="user-data">
-          <button className="btn" onClick={toggleMenu}>
-            <i className="fas fa-user-circle fa-2x"></i>
-          </button>
-          {showMenu && (
-            <div
-              className="dropdown-menu dropdown-menu-right show user-data-menu"
-              style={{
-                position: "absolute",
-                right: 0,
-                top: "100%",
-                display: "block",
-              }}
-            >
-              <p className="dropdown-item disabled">
-                Welcome, {userDetails.firstName}
-              </p>
-              <p className="dropdown-item">Email: {userDetails.email}</p>
-              <p className="dropdown-item">
-                First Name: {userDetails.firstName}
-              </p>
-              <button className="dropdown-item" onClick={handleLogout}>
-                Logout&nbsp;
-                <i className="fa-solid fa-arrow-right-from-bracket"></i>
-              </button>
+    <div>
+      <nav className="navbar navbar-light bg-light">
+        {userDetails ? (
+          <div className="d-flex justify-content-between w-100 align-items-center">
+            <div className="navbar-brand mb-0">
+              <img src="/logo.png" alt="ShopSearch Logo" className="logo" />
+              <h3 className="title">ShopSearch</h3>
             </div>
-          )}
-        </div>
-      ) : (
-        "Fetching user details..."
-      )}
-    </nav>
+            <div className="user-data">
+              <button className="btn" onClick={toggleMenu}>
+                <i className="fas fa-user-circle fa-2x"></i>
+              </button>
+              {showMenu && (
+                <div
+                  className="dropdown-menu dropdown-menu-right show user-data-menu"
+                  style={{
+                    position: "absolute",
+                    right: 0,
+                    top: "100%",
+                    display: "block",
+                  }}
+                >
+                  <p className="dropdown-item disabled">
+                    Welcome, {userDetails.firstName}
+                  </p>
+                  <p className="dropdown-item">Email: {userDetails.email}</p>
+                  <p className="dropdown-item">
+                    First Name: {userDetails.firstName}
+                  </p>
+                  <button
+                    className="dropdown-item logout"
+                    onClick={handleLogout}
+                  >
+                    Logout&nbsp;
+                    <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        ) : (
+          "Fetching user details..."
+        )}
+      </nav>
+      <div className="promptInput">
+        <PromptInput />
+      </div>
+    </div>
   );
 }
 
