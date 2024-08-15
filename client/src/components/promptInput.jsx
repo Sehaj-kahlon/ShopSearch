@@ -6,11 +6,11 @@ function PromptInput() {
   const [result, setResult] = useState("");
   const [error, setError] = useState("");
   const { TextArea } = Input;
-  // const BASE_URL = "http://localhost:5000";
+  const BASE_URL = "http://127.0.0.1:5000";
   const getResult = async () => {
     console.log(prompt);
     try {
-      const response = await fetch("http://localhost:5000/getresult", {
+      const response = await fetch(`${BASE_URL}/getresult`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
@@ -26,6 +26,7 @@ function PromptInput() {
       setError(error.message);
     }
   };
+
   const handleInputChange = (e) => {
     setPrompt(e.target.value);
   };
