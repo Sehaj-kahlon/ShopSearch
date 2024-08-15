@@ -25,23 +25,42 @@
   margin-bottom: 20px;
 }
 .promptInput {
+  margin-top: 20px;
+}
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  width: 100%;
+  max-width: 600px; 
+  margin: 0 auto; 
+  padding: 20px;
+}
+
+.result-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.result-container ul {
+  padding: 0;
+  list-style: none;
+}
+
+.result-container li {
+  margin-bottom: 10px;
+}
+
+.error {
   color: red;
 }
-.inputBox {
-  font-size: 18px;
-  width: 400px;
-}
-.textarea-container .help-text {
-  display: block;
-  margin-top: 5px;
-  color: #666;
-  font-size: 0.875rem;
-}
+
 .find-button {
   margin-top: 20px;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
 }

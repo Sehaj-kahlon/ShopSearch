@@ -81,7 +81,7 @@ function Profile() {
           "Fetching user details..."
         )}
       </nav>
-      <div className="promptInput">
+      <div  className="promptInput">
         <PromptInput />
       </div>
     </div>
